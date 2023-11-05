@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap Components | Javascript</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="fa/css/all.min.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			body{
+			background-color:black;
+			font-family: Helvetica, sans-serif;
+			}
+			
+			
+			<!-- This contains all fonts used-->
+			@font-face{
+				font-family: mova;
+				src: url(fonts/mova.ttf);
+			}
+			
+			
+			@font-face{
+				font-family: overcame;
+				src: url(fonts/OvercameDemoBold.ttf);
+			}
+			
+			@font-face{
+				font-family: qodory;
+				src: url(fonts/qodory.ttf);
+			}
+			
+			@font-face{
+				font-family: beckman;
+				src: url(fonts/beckman-free.otf);
+			}
+			
+			
+			@font-face{
+				font-family: Poppins;
+				src: url(fonts/Poppins-ExtraBold.ttf);
+			}
+			
+			
+			.navlinks a{
+				font-family: mova;
+				font-weight: 500;
+				font-size: 21px;
+				letter-spacing: 3px;
+				text-transform:uppercase;
+			}
+			
+			.navlinks ul{
+			width:100%;
+			text-align:center;
+			}
+			
+			.nav-bg{
+				background-image:linear-gradient(135deg,rgba(244,244,246,0.1) 60%,rgba(10,10,10,0.8) 100%);
+				min-height:400px !important;
+			}
+			
+			/*------Styling for Hero Section------*/
+			.overview-tabs{
+				background-color: rgb(51 51 51);
+				border-radius: 20px;
+				box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			
+			
+			/*------Styling for Skills Section------*/
+			
+			.m-skills{
+				background-image: linear-gradient(165deg,rgba(20,20,20,.8) 100%,rgba(109,109,116,.8) 100%), url("images/lagos.jpg");
+				background-repeat: no-repeat;
+				background-size: cover;
+				min-height: 700px;
+			}
+			
+			.m-skills h1, .m-skills p, .work-exp p, .hero-intro, .hero h1, .contact h1, .contact-p{
+				font-family: Poppins, sans-serif !important;
+				margin: 0 auto;
+				position: relative;
+				max-width: 1200px;
+				color: rgb(212 212 216);
+			}
+			
+			.hero p, .contact p{
+			margin: 0 auto;
+			position: relative;
+			}
+			
+			.work-exp p, .hero-intro{  
+			 color: rgb(153 153 161)
+			}
+
+			/*------Styling for Work Experience Section------*/
+			
+			.work-exp{
+				background-image:linear-gradient(135deg,rgba(244,244,246,0.1) 60%,rgba(10,10,10,0.2) 100%), url("images/5493764.jpg");
+				background-respeat: no-repeat;
+				background-size: cover;
+				min-height: 500px;
+				border-top-left-radius: 150px;
+				border-bottom-right-radius: 130px;
+			}
+			
+			.work-exp-overlay{
+				background-image: linear-gradient(137deg,rgba(244,244,246,0.1) 60%,rgba(10,10,10,0.9) 60%);
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				border-top-left-radius: 150px;
+				border-bottom-right-radius: 130px;
+				
+			}
+			.exp h1, .m-skills h1, .contact h1{
+				font-family: Poppins, sans-serif !important;
+				margin: 0 auto;
+				position: relative;
+				max-width: 1200px;
+			}
+			
+			/*-----Timeline Starts Here------------*/
+			<!-- * { -->
+			  <!-- box-sizing: border-box; -->
+			<!-- } -->
+
+			/* The actual timeline (the vertical ruler) */
+			.timeline {
+			  position: relative;
+			  max-width: 1200px;
+			  margin: 0 auto;
+			}
+
+			/* The actual timeline (the vertical ruler) */
+			.timeline::after {
+			  content: '';
+			  position: absolute;
+			  width: 6px;
+			  background-color: white;
+			  top: 0;
+			  bottom: 0;
+			  left: 50%;
+			  margin-left: -3px;
+			}
+
+			/* Container around content */
+			.m-container {
+				padding: 10px 40px;
+				position: relative;
+				width: 50%;
+			}
+
+			/* The circles on the timeline */
+			.m-container::after {
+			  content: '';
+			  position: absolute;
+			  width: 25px;
+			  height: 25px;
+			  right: -12px;
+			  background-color: black;
+			  border: 4px solid gray;
+			  top: 15px;
+			  border-radius: 50%;
+			  z-index: 1;
+			}
+
+			/* Place the container to the left */
+			.onleft {
+			  left: 0;
+			}
+
+			/* Place the container to the right */
+			.onright {
+			  left: 50%;
+			}
+
+			/* Add arrows to the left container (pointing right) */
+			.onleft::before {
+			  content: " ";
+			  height: 0;
+			  position: absolute;
+			  top: 22px;
+			  width: 0;
+			  z-index: 1;
+			  right: 30px;
+			  border: medium solid black;
+			  border-width: 10px 0 10px 10px;
+			  border-color: transparent transparent transparent black;
+			}
+
+			/* Add arrows to the right container (pointing left) */
+			.onright::before {
+			  content: " ";
+			  height: 0;
+			  position: absolute;
+			  top: 22px;
+			  width: 0;
+			  z-index: 1;
+			  left: 30px;
+			  border: medium solid white;
+			  border-width: 10px 10px 10px 0;
+			  border-color: transparent black transparent transparent;
+			}
+
+			/* Fix the circle for containers on the right side */
+			.onright::after {
+			  left: -12px;
+			}
+
+			/* The actual content */
+			.content {
+				padding: 5px 20px;
+				position: relative;
+				border-radius: 6px;
+				margin:0 0;
+				background: rgb(234, 234, 236);
+				color: rgb(41, 41, 41);
+				box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+			}
+			
+			.content h3{
+				font-family: Beckman;
+			    font-weight: 300;
+				letter-spacing: 2px;
+			}
+			
+			.content p{
+				font-family: overcame;
+			    font-weight: 300;
+				letter-spacing: 2px;
+				color: rgb(102 102 110)
+			}
+			
+			.content .content-p{
+				font-family: Beckman;
+			    font-weight: 300;
+				letter-spacing: 2px;
+				color: rgb(102 102 110)
+			}
+			
+
+			/* Media queries - Responsive timeline on screens less than 600px wide */
+			@media screen and (max-width: 600px) {
+			  /* Place the timelime to the left */
+			  .timeline::after {
+			  left: 31px;
+			  }
+			  
+			  /* Full-width containers */
+			  .m-container {
+			  width: 100%;
+			  padding-left: 70px;
+			  padding-right: 25px;
+			  }
+			  
+			  /* Make sure that all arrows are pointing leftwards */
+			  .m-container::before {
+			  left: 60px;
+			  border: medium solid white;
+			  border-width: 10px 10px 10px 0;
+			  border-color: transparent white transparent transparent;
+			  }
+
+			  /* Make sure all circles are at the same spot */
+			  .onleft::after, .onright::after {
+			  left: 15px;
+			  }
+			  
+			  /* Make all right containers behave like the left ones */
+			  .onright {
+			  left: 0%;
+			  }
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="container-fluid">
+			<!--Navigation Section Starts Here-->
+			<div class="row position-relative">
+				<div class="col position-relative">
+					<div class="overlay">
+						<nav class="navbar navbar-expand-lg bg-light fixed-top">
+							<div class="container navlinks">
+								<a class="navbar-brand" href="#">
+									<img src="images/logo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-center">
+									<span>Victor</span>
+								</a>
+								<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+								<div class="collapse navbar-collapse" id="navbarSupportedContent">
+									<ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
+										<li class="nav-item mx-3">
+											<a class="nav-link active" aria-current="page" href="#">Home</a>
+										</li>
+										<li class="nav-item mx-3">
+											<a class="nav-link" href="#">About</a>
+										</li>
+										<li class="nav-item mx-3">
+											<a class="nav-link" href="#">Projects</a>
+										</li>
+										<li class="nav-item mx-3">
+											<a class="nav-link" href="#">Contact</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+					</div>
+					<div class="col nav-bg">
+						<div class="col">
+							<img src="images/hero.png" class="img-fluid" alt="codes">
+						</div>
+						<section class="col d-flex">
+							<div></div>
+							<div class="col position-absolute top-0 end-0">
+								<img src="images/image.png" class="img-fluid " alt="Victor Akintayo">
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+			
+			<!--Hero Section Starts Here-->
+			<div class="row py-5 bg-light">
+				<div class="col hero d-flex flex-column align-items-center justify-content-evenly ">
+					<div class="col ps-5">
+						<div class="col hero-intro">
+							<p>Introduction</p>
+						</div>
+						<div class="col pb-3">
+							<h1 class="text-dark">Overview.</h1>
+						</div>
+						<div class="col mx-5">
+							<p>Are you looking for a versatile and passionate fullstack developer to bring your web projects to life? You've come to the right place! I'm Victor Akintayo, and I'm here to turn your digital dreams into reality.</p>
+
+							<p>With a passion for coding and an eye for design, I create stunning web applications that not only function flawlessly but also look exceptional. From front-end to back-end, I've got you covered.</p>
+						</div>
+					</div>
+					
+					<div class="col d-flex justify-content-evenly">
+						<div class="row row-cols-1 row-cols-md-4 g-4 col-md-9 d-flex justify-content-evenly m-5">
+							<div class="col-md-3">
+								<div class="card h-80 overview-tabs d-flex flex-column align-items-center text-secondary text-center p-5">
+									<img src="images/frontend.png" class="card-img-top mb-4" style="width:50%" alt="...">
+									<div class="card-body">
+										<h5 class="card-title">Frontend Development</h5>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card h-80 overview-tabs d-flex flex-column align-items-center text-secondary text-center p-5">
+									<img src="images/backend.png" class="card-img-top mb-4" style="width:50%" alt="...">
+									<div class="card-body">
+										<h5 class="card-title">Backend Development</h5>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card h-80 overview-tabs d-flex flex-column align-items-center text-secondary text-center p-5 rounded-9">
+									<img src="images/fullstack.png" class="card-img-top mb-4" style="width:50%" alt="...">
+									<div class="card-body">
+										<h5 class="card-title">Full-Stack Development</h5>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card h-80 overview-tabs d-flex flex-column align-items-center text-secondary text-center p-5">
+									<img src="images/agile.png" class="card-img-top mb-4" style="width:50%" alt="...">
+									<div class="card-body">
+										<h5 class="card-title text-align-center">Agile Development</h5>
+										
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Skills Section Starts Here -->
+			<div class="row m-skills d-flex flex-column justify-content-center align-items-center ">
+				<div class="col py-5">
+					<div class="col my-4 ps-5 px-5">
+						<p>My Skills<p>
+					</div>
+					<div class="col ps-5">
+						<h1>Technologies.<h1>
+					</div>
+					<div class="col py-4">
+						<div class="row d-flex flex-column align-items-center justify-content-evenly">
+							<div class="col-md-8 d-flex flex-column align-items-center justify-content-evenly">
+								<div class="col d-flex justify-content-evenly m-5">
+									<div class="col-md-1">
+										<img src="images/html.png" alt="" class="img-fluid ">
+									</div>
+									<div class="col-md-1">
+										<img src="images/css.png" alt="" class="img-fluid">
+									</div>
+									<div class="col-md-1">
+										<img src="images/javascript.png" alt="" class="img-fluid">
+									</div>
+									<div class="col-md-1">
+										<img src="images/bootstrap.png" alt="" class="img-fluid">
+									</div>
+									<div class="col-md-1">
+										<img src="images/git.png" alt="" class="img-fluid img-thumbnail">
+									</div>
+									<div class="col-md-1">
+										<img src="images/react.png" alt="" class="img-fluid">
+									</div>
+								</div>
+								<div class="col d-flex justify-content-evenly m-5">
+									<div class="col-md-1">
+										<img src="images/node.png" alt="" class="img-fluid">
+									</div>
+									<div class="col-md-1">
+										<img src="images/javascript.png" alt="" class="img-fluid">
+									</div>
+									<div class="col-md-1">
+										<img src="images/php.png" alt="" class="img-fluid">
+									</div>
+									<div class="col-md-1">
+										<img src="images/python.png" alt="" class="img-fluid">
+									</div>
+									<div class="col-md-1">
+										<img src="images/sql.png" alt="" class="img-fluid">
+									</div>
+									<div class="col-md-1">
+										<img src="images/asp.png" alt="" class="img-fluid">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--Hero Section Starts Here-->
+			<div class="row py-5 bg-light">
+				<div class="col hero d-flex flex-column align-items-center justify-content-evenly ">
+					<div class="col ps-5">
+						<div class="col hero-intro">
+							<p>My dev story</p>
+						</div>
+						<div class="col pb-3">
+							<h1 class="text-dark">Projects.</h1>
+						</div>
+						<div class="col mx-5">
+							<p>These projects demonstrate my expertise with practical examples of some of my work, including brief descriptions and links to code repositories and live demos. They showcase my ability to tackle intricate challenges, adapt to various technologies, and efficiently oversee projects.</p>
+						</div>
+					</div>
+					
+					<div class="col d-flex justify-content-evenly">
+						<div class="row row-cols-1 row-cols-md-4 g-4 d-flex justify-content-evenly m-5">
+							<div class="col ">
+								<div class="card h-100" style="width: 18rem;">
+									<img src="images/site-1.png" class="card-img-top" alt="...">
+									<div class="card-body">
+										<a href="#" class="btn btn-secondary col-12">Learn More</a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col">
+								<div class="card h-100" style="width: 18rem;">
+									<img src="images/site-2.png" class="card-img-top" alt="...">
+									<div class="card-body">
+										<a href="#" class="btn btn-secondary col-12">Learn More</a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col ">
+								<div class="card h-100" style="width: 18rem;">
+									<img src="images/site-3.png" class="card-img-top img-fluid" alt="...">
+									<div class="card-body">
+										<a href="#" class="btn btn-secondary col-12">Learn More</a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col">
+								<div class="card h-100" style="width: 18rem;">
+									<img src="images/site-2.png" class="card-img-top" alt="...">
+									<div class="card-body">
+										<a href="#" class="btn btn-secondary col-12">Learn More</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Projects Section Starts Here -->
+			<div class="row">
+				<div class="col"></div>
+			</div>
+			
+			<!-- Work Experience Section Starts Here -->
+			<div class="row">
+				<div class="col work-exp">
+					<div class="col work-exp-overlay ps-5">
+						<div class="col mt-5 ps-5">
+							<p>My work so far</p>
+						</div>
+						<div class="col exp py-4">
+							<h1>Work Experience.</h1>
+						</div>
+						<div class="timeline py-1">
+							
+							<div class="col m-container onleft my-5">
+								<div class="content">
+									<h3>Fullstack Developer</h3>
+									<p>ElixirMetrics</p>
+									<div class="col">
+										<p class="content-p d-inline-block col-md-6">Nov 2023 - Till Date</p>
+										<div class="body-content d-inline-block ps-5">
+											<div hidden>
+												<div id="popover-content-1" data-name="popover-content-1">
+													<p>Below are some of the responsibilities I performed as a front-end developer while working on this role:</p>
+													<ul>
+														<li>Built web applications with web development best practices</li>
+														<li>Transformed app designs into front-end code with HTML, CSS, and JavaScript</li>
+														<li>Worked with back-end developers to integrate UI components with APIs and databases</li>
+														<li>Gathered and refined specifications and requirements based on technical requirements or UX design</li>
+														<li>Debugged errors, troubleshoot issues, and performed routine performance optimizations</li>
+														<li>On-site search engine optimization (SEO)</li>
+														<li>Wrote high-quality, scalable, and reusable code</li>
+														<li>Stayed plugged into emerging technologies and industry trends</li>
+													</ul>
+												</div>
+											</div>
+											
+											<span class="d-inline-block" id="example-1" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Responsibilities">
+												<button class="btn btn-secondary" type="button" disabled>View more</button>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col m-container onright my-5">
+								<div class="content">
+									<h3>Python Developer</h3>
+									<p>Octobase Energy</p>
+									<div class="col">
+										<p class="content-p d-inline-block col-md-6">Jan 2022 - Oct 2023</p>
+										<div class="body-content d-inline-block ps-5">
+											<div hidden>
+												<div id="popover-content-2" data-name="popover-content-2">
+													<p>Below are some of the responsibilities I performed as a front-end developer while working on this role:</p>
+													<ul>
+														<li>Built web applications with web development best practices</li>
+														<li>Transformed app designs into front-end code with HTML, CSS, and JavaScript</li>
+														<li>Worked with back-end developers to integrate UI components with APIs and databases</li>
+														<li>Gathered and refined specifications and requirements based on technical requirements or UX design</li>
+														<li>Debugged errors, troubleshoot issues, and performed routine performance optimizations</li>
+														<li>On-site search engine optimization (SEO)</li>
+														<li>Wrote high-quality, scalable, and reusable code</li>
+														<li>Stayed plugged into emerging technologies and industry trends</li>
+													</ul>
+												</div>
+											</div>
+											
+											<span class="d-inline-block" id="example-2" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Responsibilities">
+												<button class="btn btn-secondary" type="button" disabled>View more</button>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col m-container onleft my-5">
+								<div class="content">
+									<h3>Backend Developer</h3>
+									<p>Capital Bank</p>
+									<div class="col">
+										<p class="content-p d-inline-block col-md-6">Aug 2020 - Dec 2021</p>
+										<div class="body-content d-inline-block ps-5">
+											<div hidden>
+												<div id="popover-content-3" data-name="popover-content-3">
+													<p>Below are some of the responsibilities I performed as a front-end developer while working on this role:</p>
+													<ul>
+														<li>Built web applications with web development best practices</li>
+														<li>Transformed app designs into front-end code with HTML, CSS, and JavaScript</li>
+														<li>Worked with back-end developers to integrate UI components with APIs and databases</li>
+														<li>Gathered and refined specifications and requirements based on technical requirements or UX design</li>
+														<li>Debugged errors, troubleshoot issues, and performed routine performance optimizations</li>
+														<li>On-site search engine optimization (SEO)</li>
+														<li>Wrote high-quality, scalable, and reusable code</li>
+														<li>Stayed plugged into emerging technologies and industry trends</li>
+													</ul>
+												</div>
+											</div>
+											
+											<span class="d-inline-block" id="example-3" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Responsibilities">
+												<button class="btn btn-secondary" type="button" disabled>View more</button>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col m-container onright my-5">
+								<div class="content">
+									<h3>React Developer</h3>
+									<p>DevSupport</p>
+									<div class="col">
+										<p class="content-p d-inline-block col-md-6">Aug 2018 - Oct 2020</p>
+										<div class="body-content d-inline-block ps-5">
+											<div hidden>
+												<div id="popover-content-4" data-name="popover-content-4">
+													<p>Below are some of the responsibilities I performed as a front-end developer while working on this role:</p>
+													<ul>
+														<li>Built web applications with web development best practices</li>
+														<li>Transformed app designs into front-end code with HTML, CSS, and JavaScript</li>
+														<li>Worked with back-end developers to integrate UI components with APIs and databases</li>
+														<li>Gathered and refined specifications and requirements based on technical requirements or UX design</li>
+														<li>Debugged errors, troubleshoot issues, and performed routine performance optimizations</li>
+														<li>On-site search engine optimization (SEO)</li>
+														<li>Wrote high-quality, scalable, and reusable code</li>
+														<li>Stayed plugged into emerging technologies and industry trends</li>
+													</ul>
+												</div>
+											</div>
+											
+											<span class="d-inline-block" id="example-4" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Responsibilities">
+												<button class="btn btn-secondary" type="button" disabled>View more</button>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col m-container onleft my-5">
+								<div class="content" >
+									<h3>Junior Frontend Developer</h3>
+									<p>Energy Systems</p>
+									<div class="col">
+										<p class="content-p d-inline-block col-md-6">Feb 2016 - Jun 2018</p>
+										<div class="body-content d-inline-block ps-5">
+											<div hidden>
+												<div id="popover-content-5" data-name="popover-content-5">
+													<p>Below are some of the responsibilities I performed as a front-end developer while working on this role:</p>
+													<ul>
+														<li>Built web applications with web development best practices</li>
+														<li>Transformed app designs into front-end code with HTML, CSS, and JavaScript</li>
+														<li>Worked with back-end developers to integrate UI components with APIs and databases</li>
+														<li>Gathered and refined specifications and requirements based on technical requirements or UX design</li>
+														<li>Debugged errors, troubleshoot issues, and performed routine performance optimizations</li>
+														<li>On-site search engine optimization (SEO)</li>
+														<li>Wrote high-quality, scalable, and reusable code</li>
+														<li>Stayed plugged into emerging technologies and industry trends</li>
+													</ul>
+												</div>
+											</div>
+											
+											<span class="d-inline-block" id="example-5" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Responsibilities">
+												<button class="btn btn-secondary" type="button" disabled>View more</button>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col m-container onright my-5">
+								<div class="content">
+									<h3>Frontend Developer (Trainee)</h3>
+									<p>United Infosys</p>
+									<div class="col">
+										<p class="content-p d-inline-block">Jan 2015 - Jan 2016</p>
+										<div class="body-content d-inline-block ps-5">
+											<div hidden>
+												<div id="popover-content-6" data-name="popover-content-6">
+													<p>Below are some of the responsibilities I performed as a front-end developer while working on this role:</p>
+													<ul>
+														<li>Built web applications with web development best practices</li>
+														<li>Transformed app designs into front-end code with HTML, CSS, and JavaScript</li>
+														<li>Worked with back-end developers to integrate UI components with APIs and databases</li>
+														<li>Gathered and refined specifications and requirements based on technical requirements or UX design</li>
+														<li>Debugged errors, troubleshoot issues, and performed routine performance optimizations</li>
+														<li>On-site search engine optimization (SEO)</li>
+														<li>Wrote high-quality, scalable, and reusable code</li>
+														<li>Stayed plugged into emerging technologies and industry trends</li>
+													</ul>
+												</div>
+											</div>
+											<span class="d-inline-block" id="example-6" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Responsibilities">
+												<button class="btn btn-secondary" type="button" disabled>View more</button>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Contact Form Section Starts Here -->
+			<div class="row d-flex flex-column align-items-center ">
+				<div class="col-md-8 bg-black text-light">
+					<!--Section: Contact v.2-->
+					<section class="mb-4 pt-5 contact">
+						<!--Section heading-->
+						<p class="w-responsive mx-auto contact-p ps-5">Get in touch</p>
+						<h1 class="h1-responsive font-weight-bold my-4 ps-5">Contact.</h1>
+						<!--Section description-->
+						
+						<div class="row d-flex justify-content-evenly p-5 rounded-pill bg-dark">
+							<!-----Grid column----->
+							<div class="col-sm-6 mb-md-0 mb-5">
+								<form id="contact-form" name="contact-form" action="" method="POST">
+									<!------Grid row------>
+									<div class="row py-2">
+										<!------Grid column------>
+										<div class="col-md-12">
+											<div class="md-form sm-form  mb-0">
+												<input type="text" id="name" name="name" class="form-control">
+												<label for="name" class="">Your name</label>
+											</div>
+										</div>
+										<!--Grid column-->
+										<!--Grid column-->
+										<div class="col-md-12">
+											<div class="md-form sm-form mb-0">
+												<input type="text" id="email" name="email" class="form-control">
+												<label for="email" class="">Your email</label>
+											</div>
+										</div>
+										<!--Grid column-->
+									</div>
+									<!--Grid row-->
+
+									<!--Grid row-->
+									<div class="row py-2">
+										<div class="col-md-12">
+											<div class="md-form sm-form mb-0">
+												<input type="text" id="subject" name="subject" class="form-control">
+												<label for="subject" class="">Subject</label>
+											</div>
+										</div>
+									</div>
+									<!--Grid row-->
+
+									<!--Grid row-->
+									<div class="row py-2">
+										<!--Grid column-->
+										<div class="col-md-12">
+											<div class="md-form sm-form">
+												<textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+												<label for="message">Your message</label>
+											</div>
+										</div>
+									</div>
+									<!--Grid row-->
+								</form>
+								<div class="text-center text-md-left" >
+									<a class="btn btn-secondary col-sm-6">Send</a>
+								</div>
+								<div class="status"></div>
+							</div>
+							<!--Grid column-->
+
+							<!--Grid column-->
+							<div class="col-md-3 text-center">
+								<ul class="list-unstyled mb-0">
+									<li><i class="fas fa-map-marker-alt fa-2x "></i>
+										<p>41, Somolu Avenue, Dolphin Estate, Ikoyi, Lagos, NGA</p>
+									</li>
+									<li><i class="fas fa-phone mt-4 fa-2x"></i>
+										<p>+ 234 803 061 5369</p>
+									</li>
+									<li><i class="fas fa-envelope mt-4 fa-2x"></i>
+										<p>oluwakayodeakintao@gmail.com</p>
+									</li>
+								</ul>
+							</div>
+							<!--Grid column-->
+						</div>
+					</section>
+					<!--Section: Contact v.2-->
+				</div>
+			</div>
+		</div>
+		<!-- Ends Here -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src='bootstrap/js/bootstrap.bundle.min.js'></script>
+		<script type='text/javascript'>
+            $(document).ready(function() {
+                    
+                var options = {
+                    html: true,
+                    content: $('[data-name="popover-content-1"]')
+                }
+                var exampleEl = document.getElementById('example-1')
+                var popover = new bootstrap.Popover(exampleEl, options)
+            });
+			
+			;
+			
+			$(document).ready(function() {
+                    
+                var options = {
+                    html: true,
+                    content: $('[data-name="popover-content-2"]')
+                }
+                var exampleEl = document.getElementById('example-2')
+                var popover = new bootstrap.Popover(exampleEl, options)
+            });
+			
+			$(document).ready(function() {
+                    
+                var options = {
+                    html: true,
+                    content: $('[data-name="popover-content-3"]')
+                }
+                var exampleEl = document.getElementById('example-3')
+                var popover = new bootstrap.Popover(exampleEl, options)
+            });
+			
+			$(document).ready(function() {
+                    
+                var options = {
+                    html: true,
+                    content: $('[data-name="popover-content-4"]')
+                }
+                var exampleEl = document.getElementById('example-4')
+                var popover = new bootstrap.Popover(exampleEl, options)
+            });
+			
+			$(document).ready(function() {
+                    
+                var options = {
+                    html: true,
+                    content: $('[data-name="popover-content-5"]')
+                }
+                var exampleEl = document.getElementById('example-5')
+                var popover = new bootstrap.Popover(exampleEl, options)
+            })
+			
+			$(document).ready(function() {
+                    
+                var options = {
+                    html: true,
+                    content: $('[data-name="popover-content-6"]')
+                }
+                var exampleEl = document.getElementById('example-6')
+                var popover = new bootstrap.Popover(exampleEl, options)
+            })
+        </script>
+
+		<!-- <script> -->
+			<!-- const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]') -->
+			<!-- const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl)) -->
+		<!-- </script> -->
+		
+	</body>
+<html>
