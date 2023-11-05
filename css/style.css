@@ -3,39 +3,39 @@ body{
 	font-family: Helvetica, sans-serif;
 }
 		
-p, .o-skills span{
-	font-family: eurostile, sans-serif;;
+.hero-p, .o-skills span{
+	font-family: eurostile, sans-serif;
 }
 		
 <!-- This contains all fonts used-->
 @font-face{
 	font-family: mova;
-	src: url(fonts/mova.ttf);
+	src: url(../fonts/mova.ttf);
 }
 						
 @font-face{
 	font-family: overcame;
-	src: url(fonts/OvercameDemoBold.ttf);
+	src: url(../fonts/OvercameDemoBold.ttf);
 }
 			
 @font-face{
 	font-family: qodory;
-	src: url(fonts/qodory.ttf);
+	src: url(../fonts/qodory.ttf);
 }
 			
 @font-face{
 	font-family: beckman;
-	src: url(fonts/beckman-free.otf);
+	src: url(../fonts/beckman-free.otf);
 }
 					
 @font-face{
 	font-family: Poppins;
-	src: url(fonts/Poppins-ExtraBold.ttf);
+	src: url(../fonts/Poppins-ExtraBold.ttf);
 }
 			
 @font-face{
 	font-family: eurostile;
-	src: url(fonts/Eurostile.ttf);
+	src: url(../fonts/Eurostile.ttf);
 }
 			
 .navlinks a{
@@ -62,7 +62,7 @@ p, .o-skills span{
 /*------Styling for Skills Section------*/
 			
 .m-skills{
-	background-image: linear-gradient(165deg,rgba(20,20,20,.8) 100%,rgba(109,109,116,.8) 100%), url("images/lagos.jpg");
+	background-image: linear-gradient(165deg,rgba(20,20,20,.8) 100%,rgba(109,109,116,.8) 100%), url("../images/lagos.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	min-height: 700px;
@@ -87,7 +87,7 @@ p, .o-skills span{
 
 /*------Styling for Work Experience Section------*/
 .work-exp{
-	background-image:linear-gradient(135deg,rgba(244,244,246,0.1) 60%,rgba(10,10,10,0.2) 100%), url("images/5493764.jpg");
+	background-image:linear-gradient(135deg,rgba(244,244,246,0.1) 60%,rgba(10,10,10,0.2) 100%), url("../images/5493764.jpg");
 	background-respeat: no-repeat;
 	background-size: cover;
 	min-height: 500px;
@@ -220,14 +220,14 @@ p, .o-skills span{
 	font-family: overcame;
 	font-weight: 300;
 	letter-spacing: 2px;
-	color: rgb(102 102 110)
+	color: rgb(102 102 110);
 }
 			
 .content .content-p{
 	font-family: Beckman;
 	font-weight: 300;
 	letter-spacing: 2px;
-	color: rgb(102 102 110)
+	color: rgb(102 102 110);
 }
 			
 .hero-overlay{
@@ -276,7 +276,6 @@ p, .o-skills span{
 		left: 0%;
 	}
 }
-			
 			
 /* Media queries - Responsive header and navbar on screens less than 600px wide */
 @media screen and (max-width: 600px) {
