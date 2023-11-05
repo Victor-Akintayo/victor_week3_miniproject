@@ -55,11 +55,6 @@
 			text-align:center;
 			}
 			
-			.nav-bg{
-				background-image:linear-gradient(135deg,rgba(244,244,246,0.1) 60%,rgba(10,10,10,0.8) 100%);
-				min-height:400px !important;
-			}
-			
 			/*------Styling for Hero Section------*/
 			.overview-tabs{
 				background-color: rgb(51 51 51);
@@ -77,7 +72,7 @@
 				min-height: 700px;
 			}
 			
-			.m-skills h1, .m-skills p, .work-exp p, .hero-intro, .hero h1, .contact h1, .contact-p{
+			.m-skills h1, .m-skills p, .work-exp p, .hero-intro, .hero h1, .contact h1, .contact-p, .my-intro-3{
 				font-family: Poppins, sans-serif !important;
 				margin: 0 auto;
 				position: relative;
@@ -85,9 +80,9 @@
 				color: rgb(212 212 216);
 			}
 			
-			.hero p, .contact p{
+			.hero p, .contact p, .projects, .contact-body{
 			margin: 0 auto;
-			position: relative;
+			max-width: 1200px;
 			}
 			
 			.work-exp p, .hero-intro{  
@@ -114,7 +109,7 @@
 				border-bottom-right-radius: 130px;
 				
 			}
-			.exp h1, .m-skills h1, .contact h1{
+			.exp h1, .m-skills h1, .contact h1, .my-intro-2{
 				font-family: Poppins, sans-serif !important;
 				margin: 0 auto;
 				position: relative;
@@ -240,6 +235,15 @@
 				color: rgb(102 102 110)
 			}
 			
+			.hero-overlay{
+				width:100%;
+				height:100%;
+				background-color:rgba(39, 39, 39,0.7);
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+				justify-content:center;
+			}
 
 			/* Media queries - Responsive timeline on screens less than 600px wide */
 			@media screen and (max-width: 600px) {
@@ -273,6 +277,22 @@
 			  left: 0%;
 			  }
 			}
+			
+			
+			/* Media queries - Responsive header and navbar on screens less than 600px wide */
+			@media screen and (max-width: 600px) {
+			  /* Resize images */
+			  .my-img, .nav-bg{
+			  max-height: 300px !important;
+			  }
+			  
+			  .my-img-1{
+			  min-height: 300px !important;
+			  }
+			  
+			  .my-intro-1{
+			  font-size:1em;
+			  }
 		</style>
 	</head>
 	
@@ -281,46 +301,50 @@
 			<!--Navigation Section Starts Here-->
 			<div class="row position-relative">
 				<div class="col position-relative">
-					<div class="overlay">
-						<nav class="navbar navbar-expand-lg bg-light fixed-top">
-							<div class="container navlinks">
-								<a class="navbar-brand" href="#">
-									<img src="images/logo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-center">
-									<span>Victor</span>
-								</a>
-								<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="navbar-toggler-icon"></span>
-								</button>
-								<div class="collapse navbar-collapse" id="navbarSupportedContent">
-									<ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
-										<li class="nav-item mx-3">
-											<a class="nav-link active" aria-current="page" href="#">Home</a>
-										</li>
-										<li class="nav-item mx-3">
-											<a class="nav-link" href="#">About</a>
-										</li>
-										<li class="nav-item mx-3">
-											<a class="nav-link" href="#">Projects</a>
-										</li>
-										<li class="nav-item mx-3">
-											<a class="nav-link" href="#">Contact</a>
-										</li>
-									</ul>
+						<div>
+							<nav class="navbar navbar-expand-lg bg-light fixed-top">
+								<div class="container navlinks">
+									<a class="navbar-brand" href="#">
+										<img src="images/logo.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-center">
+										<span>Victor</span>
+									</a>
+									<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+									</button>
+									<div class="collapse navbar-collapse" id="navbarSupportedContent">
+										<ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
+											<li class="nav-item mx-3">
+												<a class="nav-link active" aria-current="page" href="#">Home</a>
+											</li>
+											<li class="nav-item mx-3">
+												<a class="nav-link" href="#">About</a>
+											</li>
+											<li class="nav-item mx-3">
+												<a class="nav-link" href="#">Projects</a>
+											</li>
+											<li class="nav-item mx-3">
+												<a class="nav-link" href="#">Contact</a>
+											</li>
+										</ul>
+									</div>
 								</div>
-							</div>
-						</nav>
-					</div>
-					<div class="col nav-bg">
-						<div class="col">
-							<img src="images/hero.png" class="img-fluid" alt="codes">
+							</nav>
 						</div>
-						<section class="col d-flex">
-							<div></div>
-							<div class="col position-absolute top-0 end-0">
-								<img src="images/image.png" class="img-fluid " alt="Victor Akintayo">
+						<div class="col">
+							<div class="col hero-overlay ">
+								<img src="images/hero.png" class="img-fluid my-img-1" alt="codes">
 							</div>
-						</section>
-					</div>
+							<section class="col">
+								<div class="position-absolute my-intro top-0 start-0 px-5 pt-5 mt-5 ms-5 col-sm-6 text-start bg-light bg-gradient bg-opacity-75">
+									<p class="my-intro-1 fs-1  text-dark">Hi,</p>
+									<p class="my-intro-3 pb-3  text-dark">My name is <span class="my-intro-2 fs-3 text-uppercase">Victor Akintayo</span></p>
+									<p class="my-intro-3 pb-3  text-dark">A Full-stack Developer weaving digital dreams into reality, one line of code at a time.</p>
+								</div>
+								<div class="col position-absolute top-0 end-0">
+									<img src="images/image.png" class="img-fluid my-img" alt="Victor Akintayo">
+								</div>
+							</section>
+						</div>
 				</div>
 			</div>
 			
@@ -335,9 +359,9 @@
 							<h1 class="text-dark">Overview.</h1>
 						</div>
 						<div class="col mx-5">
-							<p>Are you looking for a versatile and passionate fullstack developer to bring your web projects to life? You've come to the right place! I'm Victor Akintayo, and I'm here to turn your digital dreams into reality.</p>
+							<p class="pb-3">Looking for a versatile and passionate Fullstack Developer to bring your web projects to life? You've come to <span class="fw-bold">the right place!</span> I'm here to turn your digital dreams into reality.</p>
 
-							<p>With a passion for coding and an eye for design, I create stunning web applications that not only function flawlessly but also look exceptional. From front-end to back-end, I've got you covered.</p>
+							<p>With a passion for coding and an eye for design, I create <span class="fw-bold">stunning web applications</span> that not only function flawlessly but also look exceptional. From <span class="fw-bold">front-end to back-end</span>, I've got you covered.</p>
 						</div>
 					</div>
 					
@@ -388,10 +412,10 @@
 			<!-- Skills Section Starts Here -->
 			<div class="row m-skills d-flex flex-column justify-content-center align-items-center ">
 				<div class="col py-5">
-					<div class="col my-4 ps-5 px-5">
+					<div class="col mt-4 mb-2 ps-5 px-5">
 						<p>My Skills<p>
 					</div>
-					<div class="col ps-5">
+					<div class="col">
 						<h1>Technologies.<h1>
 					</div>
 					<div class="col py-4">
@@ -440,6 +464,47 @@
 							</div>
 						</div>
 					</div>
+					<div class="row d-flex flex-column align-items-center justify-content-evenly">
+						<div class="col-md-8 d-flex flex-column align-items-center justify-content-evenly">
+							<div class="col-md-8 d-flex align-items-center">
+								<span class="text-black fw-bold mb-3" style="width:200px;">Time Management</span>
+								<div class="col-md-8 mb-3 progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+									<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
+								</div>
+							</div>
+							<div class="col-md-8 d-flex align-items-center">
+								<span class="text-black fw-bold mb-3" style="width:200px;">Agile (Scrum Framework)</span>
+								<div class="col-md-8 mb-3 progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+									<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
+								</div>
+							</div>
+							<div class="col-md-8 d-flex align-items-center">
+								<span class="text-black fw-bold mb-3">Test-Driven Development</span>
+								<div class="col-md-8 mb-3 progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+									<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
+								</div>
+							</div>
+							<div class="col-md-8 d-flex align-items-center">
+								<span class="text-black fw-bold mb-3">Problem Solving</span>
+								<div class="col-md-8 mb-3 progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+									<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
+								</div>
+							</div>
+							<div class="col-md-8 d-flex align-items-center">
+								<span class="text-black fw-bold mb-3">Critical Thinking</span>
+								<div class="col-md-8 mb-3 progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+									<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
+								</div>
+							</div>
+							<div class="col-md-8 d-flex align-items-center">
+								<span class="text-black fw-bold mb-3">Design Thinking</span>
+								<div class="col-md-8 mb-3 progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+									<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
 				</div>
 			</div>
 			
@@ -448,7 +513,7 @@
 				<div class="col hero d-flex flex-column align-items-center justify-content-evenly ">
 					<div class="col ps-5">
 						<div class="col hero-intro">
-							<p>My dev story</p>
+							<p>My Dev Story</p>
 						</div>
 						<div class="col pb-3">
 							<h1 class="text-dark">Projects.</h1>
@@ -458,8 +523,8 @@
 						</div>
 					</div>
 					
-					<div class="col d-flex justify-content-evenly">
-						<div class="row row-cols-1 row-cols-md-4 g-4 d-flex justify-content-evenly m-5">
+					<div class="col projects d-flex justify-content-evenly">
+						<div class="row row-cols-1 row-cols-md-4 g-4 d-flex justify-content-evenly my-3 ms-3">
 							<div class="col ">
 								<div class="card h-100" style="width: 18rem;">
 									<img src="images/site-1.png" class="card-img-top" alt="...">
@@ -509,8 +574,8 @@
 			<div class="row">
 				<div class="col work-exp">
 					<div class="col work-exp-overlay ps-5">
-						<div class="col mt-5 ps-5">
-							<p>My work so far</p>
+						<div class="col mt-5">
+							<p>My Work So Far</p>
 						</div>
 						<div class="col exp py-4">
 							<h1>Work Experience.</h1>
@@ -703,7 +768,7 @@
 			
 			<!-- Contact Form Section Starts Here -->
 			<div class="row d-flex flex-column align-items-center ">
-				<div class="col-md-8 bg-black text-light">
+				<div class="col contact-body bg-black text-light">
 					<!--Section: Contact v.2-->
 					<section class="mb-4 pt-5 contact">
 						<!--Section heading-->
